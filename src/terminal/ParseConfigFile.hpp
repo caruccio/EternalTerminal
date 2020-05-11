@@ -1190,7 +1190,8 @@ static int ssh_config_parse_line(const char *targethost, struct Options *options
       if (p && *parsing) {
         char *filename = ssh_path_expand_tilde(p);
         if (filename) {
-          local_parse_file(targethost, options, filename, parsing, seen);
+//          local_parse_file(targethost, options, filename, parsing, seen);
+          parse_ssh_config_file(targethost, options, filename);
         }
         SAFE_FREE(filename);
       }
